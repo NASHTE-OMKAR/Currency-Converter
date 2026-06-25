@@ -40,16 +40,15 @@ async function fetchdata() {
     return f;
 
 };
-
-let g;
-(async () => {
+//when to use server.js in local remove from prenthies 
+/*(async () => {
     let b = await fetch("http://localhost:3000/countrycode");
     let c = await b.json();
-    g = c;
-    // Populate both dropdowns
+    g = c;*/
+    // Populate both dropdowns      and add c insted of countryList1
     dropdowns.forEach(select => {
 
-        for (const code in c) {
+        for (const code in countryList1) {
 
             let option = document.createElement("option");
             option.value = code;
@@ -72,7 +71,8 @@ let g;
 
         })
     });
-})();
+}
+// )();  when to use server.js in local remove from prenthies 
 
 
 
@@ -92,33 +92,3 @@ const cl = async () => {
 
     msg.innerText = `${fid.value} ${inputAmount} - ${FinalRis} ${tid.value}`;
 }
-
-
-/*let b, c;
-
-async function tryf() {
-    b = await fetch("http://localhost:3000/countrycode");
-    c = await b.json();
-    for (const code in c) {
-        console.log(code);
-    }
-}*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
