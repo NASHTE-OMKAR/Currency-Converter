@@ -71,8 +71,7 @@ async function fetchdata() {
 
         })
     });
-}
-// )();  when to use server.js in local remove from prenthies 
+//} )();  when to use server.js in local remove from prenthies 
 
 
 
