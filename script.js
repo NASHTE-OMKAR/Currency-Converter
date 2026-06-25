@@ -1,4 +1,5 @@
 
+
 let url = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@2026.6.24/v1/currencies/";
 // Get all select elements
 let dropdowns = document.querySelectorAll(".dropdown select");
