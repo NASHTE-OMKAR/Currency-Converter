@@ -2,13 +2,10 @@
 let url = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@2026.6.24/v1/currencies/";
 // Get all select elements
 let dropdowns = document.querySelectorAll(".dropdown select");
-
 let msg = document.querySelector("#msg");
 let btn = document.querySelector("button");
 let fid = document.querySelector("#fid");
 let tid = document.querySelector("#tid");
-
-
 
 btn.addEventListener("click", (e) => {
     e.preventDefault()
@@ -40,44 +37,48 @@ async function fetchdata() {
     return f;
 
 };
+
 //when to use server.js in local remove from prenthies 
 /*(async () => {
     let b = await fetch("http://localhost:3000/countrycode");
     let c = await b.json();
     g = c;*/
     // Populate both dropdowns      and add c insted of countryList1
-    dropdowns.forEach(select => {
 
-        for (const code in countryList1) {
+dropdowns.forEach(select => {
 
-            let option = document.createElement("option");
-            option.value = code;
+    for (const code in countryList1) {
 
-            option.innerText = code;
+        let option = document.createElement("option");
+        option.value = code;
 
-            // Set default selections
-            if (select.name === "from" && code === "USD") {
-                option.selected = true;
-            } else if (select.name === "to" && code === "INR") {
-                option.selected = true;
-            }
 
-            select.appendChild(option); // ✅ Fixed typo + moved outside condition
+        option.innerText = code;
+
+        // Set default selections
+        if (select.name === "from" && code === "USD") {
+            option.selected = true;
+        } else if (select.name === "to" && code === "INR") {
+            option.selected = true;
         }
 
-        select.addEventListener("change", (evt) => {
+        select.appendChild(option); // ✅ Fixed typo + moved outside condition
+    }
 
-            updateflag(evt.target);
+    select.addEventListener("change", (evt) => {
 
-        })
-    });
-//} )();  when to use server.js in local remove from prenthies 
+        updateflag(evt.target);
+
+    })
+});
+
+//})();
 
 
 
 const updateflag = (ele) => {
     let imsr = ele.parentElement.querySelector("img");
-    let cid = g[ele.value];
+    let cid = countryList[ele.value];
     console.log(ele.value);
     let newim = ` https://flagsapi.com/${cid}/shiny/64.png`;
     imsr.src = newim;
@@ -91,3 +92,24 @@ const cl = async () => {
 
     msg.innerText = `${fid.value} ${inputAmount} - ${FinalRis} ${tid.value}`;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
