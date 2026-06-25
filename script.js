@@ -78,7 +78,7 @@ dropdowns.forEach(select => {
 
 const updateflag = (ele) => {
     let imsr = ele.parentElement.querySelector("img");
-    let cid = countryList[ele.value];
+    let cid = countryList1[ele.value];
     console.log(ele.value);
     let newim = ` https://flagsapi.com/${cid}/shiny/64.png`;
     imsr.src = newim;
